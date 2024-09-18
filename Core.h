@@ -1,11 +1,17 @@
 #pragma once
 #include"UI.h"
 #include"StoreData.h"
+#include"DAL.h"
 #include<vector>
 using namespace std;
 vector<Store> stores;
+
+//------Прототипи функцій
 void  EnterFromKeyboard(int count);
 void Print();
+void SearchByName(string name);
+//-----------------------
+
 void Start()
 {
 	int command=0;
@@ -17,6 +23,18 @@ void Start()
 			int count = 0;
 			cout << "Enter count of products: "; cin >> count;
 			EnterFromKeyboard(count);
+		}
+		if (command == 2)
+		{
+			string name;
+			cout << "Enter product name: "; getline(cin, name);
+			SearchByName(name);
+		}
+		if (command == 4)
+		{
+			string fileName;
+			cout << "Enter file name: "; cin >> fileName;
+			stores = ReadFromFile(fileName);
 		}
 		if (command == 3)
 		{
@@ -52,4 +70,15 @@ void Print()
 		cout << stores[i].Name << "\t" << stores[i].Count << "\t" << stores[i].Price << endl;
 	}
 	cout << "-------------------------------------------------------" << endl;
+}
+//Пошук товару за назвою
+void SearchByName(string name)
+{
+	for (int i = 0; i < stores.size(); i++)
+	{
+		if (stores[i].Name == name)
+		{
+			cout << stores[i].Name << "\t" << stores[i].Count << "\t" << stores[i].Price << endl;
+		}
+	}
 }

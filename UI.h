@@ -8,7 +8,7 @@ int Menu()
 	cout << "1. Enter data from keyboard" << endl;
 	cout << "2. Search by product" << endl;
 	cout << "3. Print all products" << endl;
-	cout << "4. Not allowed" << endl;
+	cout << "4. Read data from file" << endl;
 	cout << "5. Exit" << endl;
 	cin >> command;
 	return command;
