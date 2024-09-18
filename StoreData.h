@@ -1,7 +1,8 @@
 #pragma once
 #include<string>
 using namespace std;
-struct {
+struct Store
+{
 	string Name;
 	double Count;
 	double Price;

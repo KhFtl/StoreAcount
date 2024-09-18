@@ -1,10 +1,10 @@
 //Товар: назва, кількість, ціна за одиницю
 #include<iostream>
-#include"UI.h"
+#include"Core.h"
 using namespace std;
 
 int main()
 {
-	Menu();
+	Start();
 	return 0;
 }
